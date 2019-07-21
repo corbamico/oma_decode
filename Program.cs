@@ -6,23 +6,15 @@ namespace oma_decode
     {
         static void Main(string[] args)
         {
-            if (args.Length==2)
+            if ((args.Length == 2) && (args[0] == "-d") && (System.IO.File.Exists(args[1])))
             {
-                if ((args[0]=="-d")
-                &&(System.IO.File.Exists(args[1])))
-                {
-                    decode_oma_file(args[1]);
-                }
+                decode_oma_file(args[1]);
                 return;
             }
-            else if (args.Length==3)
+            if ((args.Length == 3) && (args[0] == "-e") && (System.IO.File.Exists(args[1])))
             {
-                if ((args[0]=="-e")
-                &&(System.IO.File.Exists(args[1])))
-                {
-                    encode_omf_file(args[1],args[2]);
-                }
-                return;                
+                encode_omf_file(args[1], args[2]);
+                return;
             }
             usage();
         }
@@ -42,7 +34,6 @@ namespace oma_decode
             {
                 //file should be begin with '01 45 4B 02 1A'
                 outfs.Write(magic, 0, magic.Length);
-
                 while ((nRead = infs.Read(buffer, 0, 19 * 100)) > 0)
                 {
                     outfs.Write(encode_bytes(buffer[0..nRead]));
@@ -64,10 +55,8 @@ namespace oma_decode
                     Console.WriteLine("[error] {0} is not valid oma file.", strFileName);
                     usage();
                 }
-
                 while ((nRead = fs.Read(buffer, 0, 19 * 100)) > 0)
                 {
-                    //Console.WriteLine("Read byte : {0}",nRead);
                     Console.Write(decode_bytes(buffer[0..nRead]));
                 }
             }
@@ -121,5 +110,3 @@ namespace oma_decode
         static byte[] _map = System.Text.ASCIIEncoding.GetEncoding(0).GetBytes("JaGuHAoLCqWXNbZAyWp");
     }
 }
-
-
