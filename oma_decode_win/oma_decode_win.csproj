@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
   <ItemGroup>
-    <ProjectReference Include="..\oma_decode\oma_decode.csproj" />
-  </ItemGroup>
-
+    <Compile  Include="..\oma_decode\Program.cs" />
+  </ItemGroup>  
   <PropertyGroup>
+    <StartupObject>oma_decode_win.Program</StartupObject>  
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
-
 </Project>
