@@ -5,7 +5,7 @@
   <PropertyGroup>
     <StartupObject>oma_decode_win.Program</StartupObject>  
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 </Project>
