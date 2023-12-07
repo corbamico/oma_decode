@@ -5,7 +5,7 @@
   <PropertyGroup>
     <StartupObject>oma_decode_win.Program</StartupObject>  
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 </Project>
